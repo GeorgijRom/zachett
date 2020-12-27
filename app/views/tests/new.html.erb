@@ -1,0 +1,27 @@
+<%= form_for :vopros, url:tests_path do |f| %>
+	<p>
+		Номер теста<br>
+		<%= f.text_field :nt %>
+	</p>	
+
+	<p>
+		Номер вопроса<br>
+		<%= f.text_field :nv %>
+	</p>	
+
+	<p>
+		Вопрос<br>
+		<%= f.text_field :vop %>
+	</p>
+
+	<p>
+		Ответ<br>
+		<%= f.text_field :otv %>
+	</p>	
+
+	<p>
+	<%= f.submit "Создать вопрос" %>
+	</p>
+<% end %>
+
+<a href="/deltest">Очистить тесты</a>

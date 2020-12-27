@@ -1,0 +1,61 @@
+<% if !logged_in? %>
+<div class="avtor">Для просмотра страницы нужно быть авторизованным <a href="/login">Авторизация</a></div>
+<% end %>
+
+        <% if logged_in? %>
+
+<div class="menurazd" style="background: #FEC827">Подача заявки на прохождение курса</div>
+
+<div style="float: left; 
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-left: 30px;">
+
+Заполните бланк
+
+<%= form_for :formz, url:zayavka_path do |f| %>
+	<p>
+		Имя:<br>
+		<%= f.text_field :name %>
+	</p>	
+
+	<p>
+		Фамилия:<br>
+		<%= f.text_field :name2 %>
+	</p>	
+
+	<p>
+		Почта:<br>
+		<%= f.text_field :mail %>
+	</p>	
+
+	<p>
+	<%= f.submit "Отправить заявку!" %>
+	</p>
+<% end %>
+
+</div>
+
+	<div style="    float: left;
+    margin-left: 50px;
+    margin-top: 10px;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 22px;">
+		Отправьте заявку и мы свяжемся с вами в<br>ближайшее время по указанной почте
+	</div>
+
+
+<style type="text/css">
+	input[type="submit"]{
+	border: 2px solid black;
+    background: none;
+    font-size: 18px;
+    padding: 5px;
+    font-weight: bold;
+}
+</style>
+
+
+        <% end %>

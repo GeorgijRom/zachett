@@ -1,0 +1,2 @@
+module SlovarHelper
+end

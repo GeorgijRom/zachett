@@ -1,0 +1,92 @@
+<% if !logged_in? %>
+<div class="avtor">Для просмотра страницы нужно быть авторизованным <a href="/login">Авторизация</a></div>
+<% end %>
+
+        <% if logged_in? %>
+
+<div class="menurazd" style="background: #DA780B; ">
+Тесты
+</div>
+
+<div style="    float: left; width: 20%; padding-left: 5%; padding-top: 25px;">
+
+<details class="testdet">
+  <summary>Тест 1</summary>
+<% @testall.each do |test| %>
+<% if (test.nt == "1") %>
+	<a class="testdet" href="/tests/<%= test.id %>">Вопрос <%= test.nv %> </a>
+<% end %>
+<% end %>
+</details>
+
+<details class="testdet">
+  <summary>Тест 2</summary>
+<% @testall.each do |test| %>
+<% if (test.nt == "2") %>
+	<a class="testdet" href="/tests/<%= test.id %>">Вопрос <%= test.nv %> </a>
+<% end %>
+<% end %>
+</details>
+
+<details class="testdet">
+  <summary>Тест 3</summary>
+<% @testall.each do |test| %>
+<% if (test.nt == "3") %>
+	<a class="testdet" href="/tests/<%= test.id %>">Вопрос <%= test.nv %> </a>
+<% end %>
+<% end %>
+</details>
+
+<details class="testdet">
+  <summary>Тест 4</summary>
+<% @testall.each do |test| %>
+<% if (test.nt == "4") %>
+	<a class="testdet" href="/tests/<%= test.id %>">Вопрос <%= test.nv %> </a>
+<% end %>
+<% end %>
+</details>
+
+<details class="testdet">
+  <summary>Тест 5</summary>
+<% @testall.each do |test| %>
+<% if (test.nt == "5") %>
+	<a class="testdet" href="/tests/<%= test.id %>">Вопрос <%= test.nv %> </a>
+<% end %>
+<% end %>
+</details>
+
+</div>
+
+<div style="float: left; width: 75%; padding-top: 20px;">
+
+<div class="textop">
+	Проходите тесты и проверяйте свои знания
+</div>
+
+</div>
+
+<style>
+.testdet{
+	color: #000;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+	margin-bottom: 6px;  
+	margin-top: 6px;  
+	clear: both;  
+	float: left;
+}
+
+
+.textop{
+	margin-top: 10px;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+
+</style>
+
+
+		<% end %>

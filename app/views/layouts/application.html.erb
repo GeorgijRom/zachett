@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Зачетная работа</title>
+    <%= csrf_meta_tags %>
+
+  </head>
+
+  <body>
+
+<div class="menu">
+	<div class="elmen"><a href="/">Главная</a></div>
+	<div class="elmen"><a href="/zayavka">Подача заявки</a></div>
+	<div class="elmen"><a href="/slovar">Словарь</a></div>
+    <div class="elmen"><a href="/test">Тесты</a></div>
+
+</div>
+
+<div style="clear: both;"></div>
+
+
+<style type="text/css">
+
+.avtor{
+    padding: 15px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.errorpas{
+    font-size: 25px;
+    padding: 15px;
+    font-weight: bold;
+    color: red;
+    box-sizing: border-box;
+}
+
+.elmen {
+    display: block;
+    background: #fff;
+    position: relative;
+    float: left;
+    padding: 5px;
+    font-size: 18px;
+    color: #000;
+    margin-right: 5px;
+    border: 3px solid black;
+}
+
+.elmen a{
+	color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+	.menu{
+	width: 100%;
+    background: #FF7F26;
+    float: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+	}
+
+	.menurazd{
+    background: red;
+    padding: 7px;
+    font-size: 27px;
+    color: #000;
+    font-weight: bold;
+    border: 3px solid black;
+	}
+
+
+</style>
+
+
+
+    <%= yield %>
+  </body>
+</html>

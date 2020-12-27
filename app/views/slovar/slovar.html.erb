@@ -1,0 +1,90 @@
+<% if !logged_in? %>
+<div class="avtor">Для просмотра страницы нужно быть авторизованным <a href="/login">Авторизация</a></div>
+<% end %>
+
+
+        <% if logged_in? %>
+
+<div class="menurazd">
+Словарь
+</div>
+
+
+<div style="    float: left;
+    width: 30%;
+    margin-left: 5%;
+    margin-right: 5%;">
+
+<div class="zagslovar">Ваши слова:</div>
+
+<div class="slova">
+<% @words.each do |word| %>
+	<div><%= word.word %></div>
+<% end %>
+</div>
+
+<div class="zagslovar"><a href="/clearslovar">Очистить словарь</a></div>
+
+
+
+</div>
+
+
+
+<div style="float: left; width: 60%;">
+
+<div class="uha">
+	Уча новые слова, не забывайте добавлять их в словарь, чтобы повторить
+
+</div>
+
+
+<%= form_for :forms, url:slovar_path do |f| %>
+	<div style="    margin-top: 20px;">
+		<div style="    float: left;  font-size: 20px; margin-right: 5px;">Слово, которое хотите добавить:</div>
+		<%= f.text_field :word %>
+	</div>	
+	
+
+	<p>
+	<%= f.submit "Добавить" %>
+	</p>
+<% end %>
+</div>
+
+<style>
+
+input[type="submit"]{
+	border: 2px solid black;
+    background: none;
+    font-size: 18px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.zagslovar{
+	text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.slova{
+	box-sizing: border-box;
+    border: 2px solid black;
+    padding: 7px;
+    height: 400px;
+    overflow-x: scroll;
+}
+
+.uha{
+	    margin-top: 10px;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+</style>
+
+        <% end %>

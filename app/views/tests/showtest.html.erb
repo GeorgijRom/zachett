@@ -1,0 +1,77 @@
+<div class="menurazd" style="background: #D7F91C;">
+Тест № <%= @test.nt %>, вопрос № <%= @test.nv %>
+</div>
+
+<div style="font-size: 27px;
+    font-weight: bold;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    padding-left: 80px;">
+	Как переводится слово "<%= @test.vop %>"?
+</div>
+
+<div
+	style="font-size: 27px;
+    font-weight: bold;
+    padding-bottom: 15px;
+    padding-left: 80px;">
+    Введите ответ <input type="text" id="vop">
+</div>
+
+<div 
+style="
+    border: 2px solid black;
+    background: none;
+    font-size: 18px;
+    padding: 5px;
+    font-weight: bold;
+    margin-left: 80px;
+    float: left;
+" onclick="check();">
+Проверить
+</div>
+
+
+<div class="rez pr" >Правильно</div>
+<div class="rez npr" >Не правильно</div>
+
+
+<input type="hidden" id="otv" value='<%= @test.otv %>'>
+<script type="text/javascript">
+	
+
+function check() {
+var a,b;
+a= document.getElementById("otv").value;
+b= document.getElementById("vop").value;
+if (a==b){
+var perem = document.querySelector(".npr");
+perem.classList.remove("open");
+var perem = document.querySelector(".pr");
+perem.classList.add("open");
+}
+else
+{
+var perem = document.querySelector(".pr");
+perem.classList.remove("open");
+var perem = document.querySelector(".npr");
+perem.classList.add("open");	
+}
+
+
+}
+</script>
+
+<style type="text/css">
+	.rez{
+	font-size: 21px;
+    padding: 5px;
+    font-weight: bold;
+    float: left;
+    display: none;
+	}
+
+	.open{
+		display: block;
+	}
+</style>

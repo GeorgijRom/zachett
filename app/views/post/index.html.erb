@@ -1,0 +1,61 @@
+<h1>Главная страница</h1>
+<hr>
+<div style="float: right; width: 30%;">
+<%= image_tag("flag.jpg", {:style => "width:400px;"}) %>
+</div>
+<div>
+<p class="pd" style = "font-size:20px; color: blue;">Присоединяйтесь к нашим курсам по английскому языку</p>
+<p class="pd" style = "font-size:20px; color: red;"> И улучшите свои знания!</p>
+</div>
+
+<div class="glavnaya">
+
+
+<div class="userfild">
+
+
+        <% if logged_in? %>
+        <div class="reg">Ваш логин: <span><%=  current_user.log %></span></div>
+        <div class="logout"><a href="/logout" style="color:#000">Выйти</a></div>
+        <%  else  %>
+
+		<div class="login"><a href="/login" style="color:#000">Войти</a></div>
+		<div class="reg"><a href="/users/new" style="color:#000">Регистрация</a></div>
+
+        <% end %>
+
+<div>
+
+
+</div>
+
+
+<style type="text/css">
+	.foto{
+    width: 100%;
+    position: absolute;
+	}
+
+	.glavnaya{
+		position: relative;
+	}
+
+	.userfild{
+    position: absolute;
+    top: 25px;
+    left: 30px;
+	}
+
+	.login, .logout{
+    font-size: 20px;
+    font-weight: bold;
+        text-decoration: underline;
+	}
+
+	.reg{
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+	}
+
+</style>
